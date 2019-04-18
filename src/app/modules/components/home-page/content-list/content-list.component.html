@@ -1,37 +1,45 @@
 <div class="column">
-  <div class="column is-12">
-    <div class="card events-card">
-      <header class="card-header">
-        <p class="card-header-title">
-          Events
-        </p>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </a>
-      </header>
-      <div class="card-table">
-        <div class="content">
-          <table class="table is-fullwidth is-striped">
-            <tbody>
-              <tr>
-                <td width="5%"><i class="fa fa-bell-o"></i></td>
-                <td>Lorum ipsum dolem aire</td>
-                <td>Lorum ipsum dolem aire</td>
-                <td>Lorum ipsum dolem aire</td>
-                <td>Lorum ipsum dolem aire</td>
-                <td>Lorum ipsum dolem aire</td>
-                <td><a class="button is-small is-primary" href="#">Action</a></td>
-
-              </tr>
-            </tbody>
-          </table>
+    <div class="column is-12">
+        <div class="card events-card">
+          <header class="card-header">
+            <p class="card-header-title">
+              My Orders
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="card-table">
+            <div class="content">
+              <table class="table is-fullwidth is-striped">
+                <thead>
+                  <tr>
+                    <th><abbr title="Appointment">Appointment</abbr></th>
+                    <th><abbr title="CustomerName">Customer Name</abbr></th>
+                    <th><abbr title="CustomerNumber">Customer Number</abbr></th>
+                    <th><abbr title="OrderId">Order Id</abbr></th>
+                    <th><abbr title="OrderState">Order State</abbr></th>
+                    <th><abbr title="OrderStatePackageCount">Order State Package Count</abbr></th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="customerOrders">
+                  <tr *ngFor="let item of customerOrders" >
+                    <td width="2%"><i class="fa fa-bell-o"></i>{{item.appointment}}</td>
+                    <td>{{item.customerName}}</td>
+                    <td>{{item.customerNumber}}</td>
+                    <td>{{item.orderId}}</td>
+                    <td>{{item.orderState}}</td>
+                    <td><span class="tag is-danger">{{item.orderStatePackageCount}}</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Up to Date</a>
+          </footer>
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item">Up To Date</a>
-      </footer>
-    </div>
-  </div>
 </div>
