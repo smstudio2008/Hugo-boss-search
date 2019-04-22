@@ -1,45 +1,44 @@
 
-    <div class="card events-card">
-      <header class="card-header">
-        <p class="card-header-title">
-          My Orders
-        </p>
-      </header>
-      <div class="card-table">
-        <div class="content">
-          <table class="table is-fullwidth is-striped">
-            <thead>
-              <tr>
-                <th><abbr title="Appointment">Appointment</abbr></th>
-                <th><abbr title="CustomerName">Customer Name</abbr></th>
-                <th><abbr title="CustomerNumber">Customer Number</abbr></th>
-                <th><abbr title="OrderId">Order Id</abbr></th>
-                <th><abbr title="OrderState">Order State</abbr></th>
-                <th><abbr title="OrderStatePackageCount">OSP Count</abbr></th>
-              </tr>
-            </thead>
-            <tbody *ngIf="customerOrders">
-              <tr *ngFor="let item of customerOrders">
-                <td *ngIf="item.appointment === null; else elseBlock"
-                  width="20%"><span
-                    class="tag is-danger">NULL</span></td>
-                <ng-template #elseBlock> <td width="20%">{{item.appointment}}</td></ng-template>
-                <td>{{item.customerName}}</td>
-                <td>{{item.customerNumber}}</td>
-                <td>{{item.orderId}}</td>
-                <td>{{item.orderState}}</td>
-                <td *ngIf="item.orderStatePackageCount === null; else Block"
-                  width="5%"><span
-                    class="tag is-danger">NULL</span></td>
-                <ng-template #Block> <td><span class="tag is-success"
-                      width="5%">{{item.orderStatePackageCount}}</span></td></ng-template>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item">Up to Date</a>
-      </footer>
+<div class="card events-card">
+  <header class="card-header">
+    <p class="card-header-title">
+      My Orders
+    </p>
+  </header>
+  <div class="card-table">
+    <div class="content">
+      <table class="table is-fullwidth is-striped">
+        <thead>
+          <tr>
+            <th><abbr title="Appointment">Appointment</abbr></th>
+            <th><abbr title="CustomerName">Customer Name</abbr></th>
+            <th><abbr title="CustomerNumber">Customer Number</abbr></th>
+            <th><abbr title="OrderId">Order Id</abbr></th>
+            <th><abbr title="OrderState">Order State</abbr></th>
+            <th><abbr title="OrderStatePackageCount">OSP Count</abbr></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="searchResult">
+          <tr *ngFor="let item of searchResult | async">
+            <td *ngIf="item.appointment === null; else elseBlock"
+              width="20%"><span
+                class="tag is-danger">NULL</span></td>
+            <ng-template #elseBlock> <td width="20%">{{item.appointment}}</td></ng-template>
+            <td>{{item.customerName}}</td>
+            <td>{{item.customerNumber}}</td>
+            <td>{{item.orderId}}</td>
+            <td>{{item.orderState}}</td>
+            <td *ngIf="item.orderStatePackageCount === null; else Block"
+              width="5%"><span
+                class="tag is-danger">NULL</span></td>
+            <ng-template #Block> <td><span class="tag is-success"
+                  width="5%">{{item.orderStatePackageCount}}</span></td></ng-template>
+          </tr>
+        </tbody>
+      </table>
     </div>
- 
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Up to Date</a>
+  </footer>
+</div>
