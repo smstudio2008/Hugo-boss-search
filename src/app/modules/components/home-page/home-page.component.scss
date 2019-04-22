@@ -1,9 +1,12 @@
-
 section.section.is-title-bar {
   padding: 1.5rem;
-  border-bottom: 1px solid rgba(24,28,33,.06);
+  border-bottom: 1px solid rgba(24, 28, 33, 0.06);
 }
 
 .title.is-6 {
   font-weight: 400;
+}
+
+.is-image {
+  background: url(https://www.watchia.com/en/media/catalog/category/reverie_banner_780x200px_BOSSherre.jpg) no-repeat center center;
 }
