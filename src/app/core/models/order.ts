@@ -1,7 +1,8 @@
 export interface OrderInterface {
   appointment: string;
   customerName: string;
-  customerNumber: string;
+  customerNumber: number;
   orderId: number;
+  orderState: string;
   orderStatePackageCount: string;
 }
