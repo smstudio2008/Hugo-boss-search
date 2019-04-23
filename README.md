@@ -8,7 +8,7 @@ This Hugo Boss App - Inventory Search Project allows the user to search pre-exis
 
 ## DEMO Production
 
-[Hugo Boss App - Inventory Search - Angular](https://smstudio2008.github.io/Technical-Challenge-Coding-Kata/ 'Coding Kata - Roman Numerals - Angular'):
+[Hugo Boss App - Inventory Search - Angular](https://smstudio2008.github.io/Hugo-boss-search/ 'Hugo Boss App - Inventory Search'):
 
 # Installation
 
