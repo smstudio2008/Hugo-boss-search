@@ -1,23 +1,64 @@
-// import { HttpClientTestingModule } from '@angular/common/http/testing';
-// import { TestBed } from '@angular/core/testing';
+import mockito from 'ts-mockito';
 
-// import { SearchRepository } from './order.service';
+import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
 
-// describe('SearchRepositoryService', () => {
-//   beforeEach(() =>
-//     TestBed.configureTestingModule({
-//       imports: [HttpClientTestingModule],
-//       providers: [SearchRepository]
-//     })
-//   );
+import { OrderService } from './order.service';
+import { OrderInterface } from 'src/app/core/models/order';
 
-//   it('should be created Search service', () => {
-//     const service: SearchRepository = TestBed.get(SearchRepository);
-//     expect(service).toBeTruthy();
-//   });
+const MockHttpClientClass = mockito.mock(HttpClient);
+const mockHttpClientInstance = mockito.instance(MockHttpClientClass);
 
-//   it('should have get fetchAll function', () => {
-//     const service: SearchRepository = TestBed.get(SearchRepository);
-//     expect(service.fetchAll).toBeTruthy();
-//   });
-// });
+describe('Given the Order Service', () => {
+  describe('and when instantiated', () => {
+    const mockedOrderServiceResponse = {
+      appointment: null,
+      customerName: 'Max Mock',
+      customerNumber: null,
+      orderId: 8000377,
+      orderState: 'in-transit',
+      orderStatePackageCount: '1/1'
+    };
+
+    const mockedOrderService = {
+      appointment: null,
+      customerName: 'Max Mock',
+      customerNumber: null,
+      orderId: 8000377,
+      orderState: 'in-transit',
+      orderStatePackageCount: '1/1'
+    } as OrderInterface;
+
+    let sut: OrderService;
+
+    beforeEach(() => {
+      sut = new OrderService(mockHttpClientInstance);
+    });
+
+    it('should be an instance of OrderService', () => {
+      expect(sut instanceof OrderService).toBe(true);
+    });
+
+    describe('and when `fetchAll` is invoked', () => {
+      let actualResult;
+      let mockObservable;
+
+      beforeEach(() => {
+        mockObservable = of(mockedOrderServiceResponse);
+
+        mockito.when(MockHttpClientClass.get(mockito.anything())).thenReturn(mockObservable);
+        actualResult = sut.fetchAll();
+      });
+
+      it('should make a GET request with the correct url', () => {
+        const expectedUrl = 'https://www.mocky.io/v2/5cb87cee4c0000511bd3d5ba';
+
+        mockito.verify(MockHttpClientClass.get(expectedUrl)).once();
+      });
+
+      it('should return the mocked order', async () => {
+        expect(await actualResult.toPromise()).toEqual(mockedOrderService);
+      });
+    });
+  });
+});
