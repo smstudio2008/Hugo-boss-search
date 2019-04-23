@@ -1,6 +1,6 @@
 import { HomeModule } from './modules/module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule, isDevMode, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { DevToolsExtension, NgRedux, NgReduxModule } from '@angular-redux/store'
 @NgModule({
   declarations: [AppComponent, NavBarComponent],
   imports: [BrowserModule, AppRoutingModule, HomeModule, NgReduxModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
