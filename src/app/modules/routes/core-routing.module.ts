@@ -1,5 +1,4 @@
 import { HomePageComponent } from './../components/home-page/home-page.component';
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

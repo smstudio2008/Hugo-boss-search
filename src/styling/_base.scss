@@ -1,0 +1,21 @@
+@import 'config';
+@import 'fonts';
+@import 'mixins/_background';
+@import 'mixins/_banner';
+@import 'mixins/_screen';
+
+html,
+body {
+  @include cover-background($c-background-blue);
+
+  font-family: $font-family-medium;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-medium;
+}

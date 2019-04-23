@@ -8,7 +8,6 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { InitialAppState, INITIAL_STATE } from './shared/redux/interface/initialState';
 import { rootReducer } from './shared/redux/reducers/reducer';
 import { DevToolsExtension, NgRedux, NgReduxModule } from '@angular-redux/store';
-
 @NgModule({
   declarations: [AppComponent, NavBarComponent],
   imports: [BrowserModule, AppRoutingModule, HomeModule, NgReduxModule],

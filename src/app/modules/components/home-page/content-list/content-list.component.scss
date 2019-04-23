@@ -1,4 +1,30 @@
+@import '../../../../../styles.scss';
+
+.card {
+  box-shadow: $c-box-shadow;
+  margin-bottom: 2rem;
+}
+
+.card-header-title {
+  color: $c-blue-grey;
+  font-weight: 400;
+}
+
+.card .content {
+  font-size: 14px;
+}
+
+.card-footer-item {
+  font-size: 14px;
+  font-weight: 700;
+  color: $c-white;
+}
+
 .card-footer {
-  background-color: #e8ecf1;
-  border-top: 1px solid #e08283;
+  background-color: $c-blue-grey;
+  border-top: $c-border-top;
+}
+
+.card-table .table {
+  margin-bottom: 0;
 }
