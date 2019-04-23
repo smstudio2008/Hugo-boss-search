@@ -1,27 +1,35 @@
-# HugoBossApp
+# Hugo Boss App - Inventory Search - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Hugo-Boss-Logo.svg/1200px-Hugo-Boss-Logo.svg.png)
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This Hugo Boss App - Inventory Search Project allows the user to search pre-existing customer data from mock API end-points
 
-## Code scaffolding
+## DEMO Production
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Hugo Boss App - Inventory Search - Angular](https://smstudio2008.github.io/Technical-Challenge-Coding-Kata/ 'Coding Kata - Roman Numerals - Angular'):
 
-## Build
+# Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Git clone this repository into a directory on your computer and need to run this project with docker.
 
-## Running unit tests
+# Docker
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+Use Docker for the following
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Build the application distribution
 
-## Further help
+To build the images and the containers
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+docker-compose build
+```
+
+To bring up the containers and run
+
+```
+docker-compose up
+```
