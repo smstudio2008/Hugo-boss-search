@@ -1,12 +1,27 @@
+@import '../../../../styles.scss';
+
+.hero.is-image .title,
+.hero.is-image .subtitle {
+  color: $c-white;
+}
+
+.info-tiles {
+  margin: 1rem 0;
+}
+.info-tiles .subtitle {
+  font-weight: 300;
+  color: $c-grey;
+}
+
+.is-image {
+  @include banner-background('https://www.watchia.com/en/media/catalog/category/reverie_banner_780x200px_BOSSherre.jpg');
+}
+
 section.section.is-title-bar {
   padding: 1.5rem;
-  border-bottom: 1px solid rgba(24, 28, 33, 0.06);
+  border-bottom: $c-border-bottom;
 }
 
 .title.is-6 {
   font-weight: 400;
-}
-
-.is-image {
-  background: url(https://www.watchia.com/en/media/catalog/category/reverie_banner_780x200px_BOSSherre.jpg) no-repeat center center;
 }

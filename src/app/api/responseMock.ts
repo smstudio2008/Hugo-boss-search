@@ -1,5 +1,3 @@
-import { OrderInterface } from '../core/models/order'
-
 export const order = [
   {
     appointment: null,
@@ -7,7 +5,7 @@ export const order = [
     customerNumber: null,
     orderId: 80008577,
     orderState: 'in-transit',
-    orderStatePackageCount: '1/1',
+    orderStatePackageCount: '1/1'
   },
   {
     appointment: '2020-10-10T09:00:00Z',
@@ -15,7 +13,7 @@ export const order = [
     customerNumber: 3999,
     orderId: 80008999,
     orderState: 'inbounded',
-    orderStatePackageCount: null,
+    orderStatePackageCount: null
   },
   {
     appointment: '2018-05-21T09:00:00Z',
@@ -23,7 +21,7 @@ export const order = [
     customerNumber: 66999,
     orderId: 80668999,
     orderState: 'expired',
-    orderStatePackageCount: null,
+    orderStatePackageCount: null
   },
   {
     appointment: '2019-06-21T09:00:00Z',
@@ -31,7 +29,7 @@ export const order = [
     customerNumber: 66999,
     orderId: 80668999,
     orderState: 'cancelled',
-    orderStatePackageCount: null,
+    orderStatePackageCount: null
   },
   {
     appointment: '2019-06-21T09:00:00Z',
@@ -39,8 +37,8 @@ export const order = [
     customerNumber: 66999,
     orderId: 80668577,
     orderState: 'in-progress',
-    orderStatePackageCount: null,
-  },
+    orderStatePackageCount: null
+  }
 ];
 
 // created mock API ENDPOINT USING https://www.mocky.io/
